@@ -1,8 +1,8 @@
-﻿namespace LearnAstro.Domain.Core
+﻿namespace LearnAstro.Domain.Entities.StudentEntities
 {
     public sealed class Student
     {
-        #region Конструкторы
+        #region Constructors
 
         public Student(string username, string email, DateOnly registrationDate, string? phone = null,
             string? firstName = null, string? lastName = null, string? location = null, DateOnly? birthDate = null,
@@ -21,7 +21,7 @@
 
         #endregion
 
-        #region Свойства
+        #region Properties
 
         public string Username { get; }
 

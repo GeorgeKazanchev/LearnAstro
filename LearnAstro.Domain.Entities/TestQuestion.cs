@@ -4,9 +4,14 @@
     {
         #region Constructors
 
-        public TestQuestion(int id, byte number, string content, byte pointsForCorrectAnswer, byte? correctAnswerIndex = null,
-            TestAnswer[]? answerVariants = null)
+        public TestQuestion(int id, byte number, string content, byte pointsForCorrectAnswer, byte correctAnswerIndex,
+            TestAnswer[] answerVariants)
         {
+            if (correctAnswerIndex >= answerVariants.Length)
+            {
+                throw new Exception("The correct answer is not presented among the answer variants.");
+            }
+
             Id = id;
             Number = number;
             Content = content;
@@ -37,9 +42,9 @@
 
         public byte PointsForCorrectAnswer { get; }
 
-        public byte? CorrectAnswerIndex { get; }
+        public byte CorrectAnswerIndex { get; }
 
-        public TestAnswer[]? AnswerVariants { get; }
+        public TestAnswer[] AnswerVariants { get; }
 
         #endregion
     }

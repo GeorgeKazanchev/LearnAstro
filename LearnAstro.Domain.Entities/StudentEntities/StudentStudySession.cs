@@ -1,10 +1,12 @@
-﻿namespace LearnAstro.Domain.Core
+﻿using LearnAstro.Domain.Core;
+
+namespace LearnAstro.Domain.Entities.StudentEntities
 {
     public sealed class StudentStudySession : StudySession
     {
         #region Constructors
 
-        public StudentStudySession(int id, StudySession studySession, bool isEnabled, StudentTest? test = null) 
+        public StudentStudySession(int id, StudySession studySession, bool isEnabled, StudentTest? test = null)
             : base(studySession)
         {
             Id = id;

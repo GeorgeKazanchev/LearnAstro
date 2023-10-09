@@ -1,4 +1,4 @@
-﻿namespace LearnAstro.Domain.Core
+﻿namespace LearnAstro.Domain.Entities
 {
     public interface ITheoreticalMaterial
     {

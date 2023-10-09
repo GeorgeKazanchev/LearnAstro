@@ -1,4 +1,6 @@
-﻿namespace LearnAstro.Domain.Core
+﻿using LearnAstro.Domain.Core;
+
+namespace LearnAstro.Domain.Entities.StudentEntities
 {
     public sealed class StudentCourseProject : CourseProject
     {

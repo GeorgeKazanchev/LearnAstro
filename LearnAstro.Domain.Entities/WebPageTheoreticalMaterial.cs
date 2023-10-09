@@ -1,4 +1,6 @@
-﻿namespace LearnAstro.Domain.Core
+﻿using LearnAstro.Domain.Entities;
+
+namespace LearnAstro.Domain.Core
 {
     public sealed class WebPageTheoreticalMaterial : ITheoreticalMaterial
     {
