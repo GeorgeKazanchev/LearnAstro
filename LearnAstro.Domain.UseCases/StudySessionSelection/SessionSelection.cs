@@ -4,11 +4,9 @@
     {
         #region Constructors
 
-        public SessionSelection(ISessionSelectionDataAccess dataAccessModel, ISessionSelectionInput inputModel,
-            ISessionSelectionOutput outputModel)
+        public SessionSelection(ISessionSelectionDataAccess dataAccessModel, ISessionSelectionOutput outputModel)
         {
             DataAccessModel = dataAccessModel;
-            InputModel = inputModel;
             OutputModel = outputModel;
         }
 
@@ -18,15 +16,7 @@
 
         public ISessionSelectionDataAccess DataAccessModel { get; set; }
 
-        public ISessionSelectionInput InputModel { get; set; }
-
         public ISessionSelectionOutput OutputModel { get; set; }
-
-        #endregion
-
-        #region Public methods
-
-
 
         #endregion
     }

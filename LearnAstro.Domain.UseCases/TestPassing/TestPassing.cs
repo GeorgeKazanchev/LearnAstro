@@ -2,15 +2,13 @@
 
 namespace LearnAstro.Domain.UseCases.TestPassing
 {
-    public class TestPassing
+    public class TestPassing : ITestPassingInput
     {
         #region Constructors
 
-        public TestPassing(ITestPassingDataAccess dataAccessModel, ITestPassingInput inputModel,
-            ITestPassingOutput outputModel, StudentTest test)
+        public TestPassing(ITestPassingDataAccess dataAccessModel, ITestPassingOutput outputModel, StudentTest test)
         {
             DataAccessModel = dataAccessModel;
-            InputModel = inputModel;
             OutputModel = outputModel;
             Test = test;
         }
@@ -21,8 +19,6 @@ namespace LearnAstro.Domain.UseCases.TestPassing
 
         public ITestPassingDataAccess DataAccessModel { get; set; }
 
-        public ITestPassingInput InputModel { get; set; }
-
         public ITestPassingOutput OutputModel { get; set; }
 
         public StudentTest Test { get; private set; }
@@ -31,66 +27,39 @@ namespace LearnAstro.Domain.UseCases.TestPassing
 
         #region Public methods
 
+        #region Implemented methods
+
+        public void LoadAnsweredQuestionsFromStudent(List<StudentTestQuestion> answeredQuestions)
+        {
+            Test.TestQuestions = answeredQuestions;
+        }
+
+        #endregion
+
         public void LoadQuestions()
         {
-            try
-            {
-                var testQuestions = DataAccessModel.GetTestQuestions(Test);
-                Test.TestQuestions = testQuestions;
-            }
-            catch (Exception exception)
-            {
-                
-            }
+            var testQuestions = DataAccessModel.GetTestQuestions(Test);
+            Test.TestQuestions = testQuestions;
         }
 
         public void SaveAnsweredQuestions()
         {
-            checkForTestQuestions();
-
-            try
-            {
-                DataAccessModel.SaveAnsweredTestQuestions(Test.TestQuestions!);
-            }
-            catch (Exception exception)
-            {
-
-            }
+            DataAccessModel.SaveAnsweredTestQuestions(Test.TestQuestions!);
         }
 
         public void SendQuestionsToStudent()
         {
-            checkForTestQuestions();
             OutputModel.SendTestQuestions(Test.TestQuestions!);
         }
 
-        public void SendResultsToStudents()
+        public void SendResultsToStudent()
         {
             OutputModel.SendTestResults(Test);
-        }
-
-        public void GetAnsweredQuestionsFromStudent()
-        {
-            checkForTestQuestions();
-            var answeredQuestions = InputModel.GetAnsweredQuestions();
-            Test.TestQuestions = answeredQuestions;
         }
 
         public void CheckAnswers()
         {
             Test.UpdateTestResults();
-        }
-
-        #endregion
-
-        #region Private methods
-
-        private void checkForTestQuestions()
-        {
-            if (Test.TestQuestions == null)
-            {
-                throw new Exception("Test questions are missing.");
-            }
         }
 
         #endregion

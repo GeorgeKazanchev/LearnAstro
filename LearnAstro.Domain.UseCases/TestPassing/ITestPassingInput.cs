@@ -4,6 +4,6 @@ namespace LearnAstro.Domain.UseCases.TestPassing
 {
     public interface ITestPassingInput
     {
-        public List<StudentTestQuestion> GetAnsweredQuestions();
+        public void LoadAnsweredQuestionsFromStudent(List<StudentTestQuestion> testQuestions);
     }
 }

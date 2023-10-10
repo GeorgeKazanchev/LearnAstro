@@ -4,11 +4,9 @@
     {
         #region Constructors
 
-        public CourseSelection(ICourseSelectionDataAccess dataAccessModel, ICourseSelectionInput inputModel,
-            ICourseSelectionOutput outputModel)
+        public CourseSelection(ICourseSelectionDataAccess dataAccessModel, ICourseSelectionOutput outputModel)
         {
             DataAccessModel = dataAccessModel;
-            InputModel = inputModel;
             OutputModel = outputModel;
         }
 
@@ -18,15 +16,7 @@
 
         public ICourseSelectionDataAccess DataAccessModel { get; set; }
 
-        public ICourseSelectionInput InputModel { get; set; }
-
         public ICourseSelectionOutput OutputModel { get; set; }
-
-        #endregion
-
-        #region Public methods
-
-
 
         #endregion
     }
