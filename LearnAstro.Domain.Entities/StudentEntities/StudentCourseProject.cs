@@ -6,10 +6,18 @@ namespace LearnAstro.Domain.Entities.StudentEntities
     {
         #region Constructors
 
-        public StudentCourseProject(int id, CourseProject project) : base(project)
+        public StudentCourseProject(int id, CourseProject project, List<StudentPracticalTask>? practicalTasks = null) 
+            : base(project)
         {
             Id = id;
+            PracticalTasks = practicalTasks;
         }
+
+        #endregion
+
+        #region Properties
+
+        public new List<StudentPracticalTask>? PracticalTasks { get; set; }
 
         #endregion
     }

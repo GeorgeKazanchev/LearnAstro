@@ -26,11 +26,11 @@ namespace LearnAstro.Domain.Entities.StudentEntities
 
         public byte PointsCount { get; } = 0;
 
-        public new StudentCourseProject? Project { get; }
+        public new StudentCourseProject? Project { get; set; }
 
-        public new StudentTest? FinalTest { get; }
+        public new StudentTest? FinalTest { get; set; }
 
-        public new List<StudentStudySession>? StudySessions { get; }
+        public new List<StudentStudySession>? StudySessions { get; set; }
 
         #endregion
     }

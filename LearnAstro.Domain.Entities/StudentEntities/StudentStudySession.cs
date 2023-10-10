@@ -20,7 +20,7 @@ namespace LearnAstro.Domain.Entities.StudentEntities
 
         public bool IsEnabled { get; } = false;
 
-        public new StudentTest? Test { get; }
+        public new StudentTest? Test { get; set; }
 
         #endregion
     }

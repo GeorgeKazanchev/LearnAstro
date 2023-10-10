@@ -26,11 +26,11 @@ namespace LearnAstro.Domain.Entities.StudentEntities
 
         public bool IsPassed { get; } = false;
 
-        public new StudentStudyBlock? PrerequisiteBlock { get; }
+        public new StudentStudyBlock? PrerequisiteBlock { get; set; }
 
-        public new StudentBlockProject? Project { get; }
+        public new StudentBlockProject? Project { get; set; }
 
-        public new List<StudentStudyCourse>? StudyCourses { get; }
+        public new List<StudentStudyCourse>? StudyCourses { get; set; }
 
         #endregion
     }

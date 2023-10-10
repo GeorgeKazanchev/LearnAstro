@@ -39,7 +39,7 @@
 
         public DateOnly? BirthDate { get; }
 
-        public List<StudentStudyBlock>? StudyBlocks { get; }
+        public List<StudentStudyBlock>? StudyBlocks { get; set; }
 
         #endregion
     }

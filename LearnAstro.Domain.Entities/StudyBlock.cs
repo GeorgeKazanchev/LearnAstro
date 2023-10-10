@@ -4,12 +4,13 @@
     {
         #region Constructors
 
-        public StudyBlock(int id, string name, string description, StudyBlock? prerequisiteBlock = null,
+        public StudyBlock(int id, string name, string description, byte level, StudyBlock? prerequisiteBlock = null,
             BlockProject? project = null, List<StudyCourse>? studyCourses = null)
         {
             Id = id;
             Name = name;
             Description = description;
+            Level = level;
             PrerequisiteBlock = prerequisiteBlock;
             Project = project;
             StudyCourses = studyCourses;
@@ -20,6 +21,7 @@
             Id = source.Id;
             Name = source.Name;
             Description = source.Description;
+            Level = source.Level;
             PrerequisiteBlock = source.PrerequisiteBlock;
             Project = source.Project;
             StudyCourses = source.StudyCourses;
@@ -34,6 +36,8 @@
         public string Name { get; }
 
         public string Description { get; }
+
+        public byte Level { get; }
 
         public StudyBlock? PrerequisiteBlock { get; }
 
